@@ -1,0 +1,46 @@
+{
+  "site": {
+    "title": "Cœur assaisonné",
+    "subtitle": "Tétralogie poétique en quatre vents",
+    "author": "Johnny Y. Nam · JyDiel Records",
+    "epigraph": "Que vienne le temps<br>Que changent les saisons<br>Il demeure le même<br>Ses arômes diffèrent"
+  },
+  "theme": {
+    "colorCream": "#FEF6E4",
+    "colorCopper": "#B87333",
+    "colorInk": "#1F2428",
+    "colorGray": "#707070",
+    "fontDisplay": "'Cormorant Garamond',Georgia,serif",
+    "fontBody": "'Lora',Georgia,serif"
+  },
+  "seasons": [
+    { "wind": "Notos", "name": "Le désert", "count": 127 },
+    { "wind": "Argeste", "name": "L'apprentissage", "count": 92 },
+    { "wind": "Borée", "name": "L'alliance", "count": 82 },
+    { "wind": "Zéphyr", "name": "La transmission", "count": 24 }
+  ],
+  "links": {
+    "notos": { "url": "#", "title": "Notos · Mémoires d'un autre été", "desc": "127 poèmes · Le désert · 2013-2021" },
+    "argeste": { "url": "#", "title": "Argeste · Mémoire d'un autre automne", "desc": "92 poèmes · L'apprentissage · 2021-2022" },
+    "boree": { "url": "#", "title": "Borée · Mémoire d'un autre hiver", "desc": "82 poèmes · L'alliance · 2022-2023" },
+    "zephyr": { "url": "#", "title": "Zéphyr · Mémoire de tous les printemps", "desc": "24 poèmes · La transmission · 2023-2025" },
+    "yeay": { "url": "#", "title": "Yeay · Compilation annuelle", "desc": "Poèmes de gratitude d'anniversaire · depuis 2017" },
+    "blog": { "url": "https://jydielrecords.wixsite.com/entreici-et-ailleurs", "title": "Blog · Entre ici et ailleurs", "desc": "10 poèmes en accès libre" },
+    "newsletter": { "url": "#", "title": "Newsletter mensuelle", "desc": "Un poème, un édito, les nouvelles du projet" },
+    "commande": { "url": "#", "title": "Cartes & poèmes personnalisés", "desc": "Commandez une carte calligraphiée, un poème sur mesure, une dédicace" },
+    "tiktok": { "url": "#", "title": "TikTok · @jydielrecords", "desc": "Poèmes lus à voix haute chaque semaine" },
+    "instagram": { "url": "#", "title": "Instagram · @jydielrecords", "desc": "Carrousels, sentences, communauté" }
+  },
+  "quote": {
+    "text": "Mon cœur à moi qui se teinte<br>De blanc de noir d'ocre de marron<br>Mon cœur à moi où sont ceintes<br>Plumes, nuages, poussière et goudron.",
+    "cite": "— Cœur assaisonné, J.y.D., 30 novembre 2022"
+  },
+  "footer": {
+    "text": "Cœur assaisonné · Tétralogie en quatre vents<br>325 poèmes · 2013-2025<br><br>JyDiel Records · © 2026"
+  },
+  "github": {
+    "repo": "jydielrecords/coeur-assaisonne",
+    "branch": "main",
+    "configPath": "config.json"
+  }
+}

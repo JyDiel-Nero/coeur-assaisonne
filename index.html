@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Cœur Assaisonné — Johnny Y. Nam · JyDiel Records</title>
+<meta name="description" content="Tétralogie poétique chrétienne en quatre vents. 325 poèmes, 4 recueils.">
+<meta property="og:title" content="Cœur Assaisonné — Tétralogie poétique">
+<meta property="og:description" content="325 poèmes en 4 saisons spirituelles. Poésie chrétienne francophone.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FEF6E4;--copper:#B87333;--copper-dark:#8B4513;--ink:#1F2428;--ink-soft:#4A2C0A;--gray:#707070;--gray-light:#9CA3AF;--white:#FFFBF0;--notos-bg:#F4E4BC;--notos-accent:#B87333;--notos-ink:#4A2C0A;--argeste-bg:#D8D5CF;--argeste-accent:#6B6B6B;--argeste-ink:#1F2428;--boree-bg:#1F3A5F;--boree-accent:#8FB4D8;--boree-ink:#F5F9FC;--zephyr-bg:#DFEAD8;--zephyr-accent:#3B5C3A;--zephyr-ink:#1A2E17;--yeay-bg:#2D1B3E;--yeay-accent:#C084FC;--yeay-ink:#F3E8FF;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Lora',Georgia,serif}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--ink);background:var(--cream);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+a{color:inherit;text-decoration:none;transition:all .3s ease}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,115,51,.12) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-55%);pointer-events:none}
+.logo-container{position:relative;width:200px;height:200px;margin-bottom:2rem;z-index:2}
+.logo-container svg{width:100%;height:100%}
+@keyframes heartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+.heart-group{animation:heartPulse 4s ease-in-out infinite;transform-origin:200px 200px}
+@keyframes compassSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.compass-outer{animation:compassSpin 120s linear infinite;transform-origin:200px 200px}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.2rem,6vw,4rem);font-weight:700;color:var(--ink);text-align:center;letter-spacing:.02em;line-height:1.15;margin-bottom:.5rem;z-index:2;position:relative}
+.hero-subtitle{font-family:var(--font-display);font-size:clamp(1rem,2.5vw,1.3rem);font-style:italic;color:var(--copper);text-align:center;margin-bottom:.3rem;z-index:2;position:relative}
+.hero-author{font-family:var(--font-body);font-size:.85rem;color:var(--gray);letter-spacing:.15em;text-transform:uppercase;margin-top:1rem;z-index:2;position:relative}
+.hero-epigraph{max-width:440px;text-align:center;font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--ink-soft);line-height:1.7;margin-top:2.5rem;opacity:.85;z-index:2;position:relative}
+.hero-scroll{position:absolute;bottom:2rem;font-size:.75rem;color:var(--gray-light);letter-spacing:.2em;text-transform:uppercase;z-index:2}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-title,.hero-subtitle,.hero-author,.hero-epigraph,.logo-container{animation:fadeIn .8s ease both}
+.hero-title{animation-delay:.2s}.hero-subtitle{animation-delay:.4s}.hero-author{animation-delay:.6s}.hero-epigraph{animation-delay:.8s}.logo-container{animation-delay:0s}
+.seasons-strip{display:grid;grid-template-columns:repeat(4,1fr)}
+.season-card{padding:2.5rem 1.5rem;text-align:center;position:relative;min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.season-card .s-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;opacity:.6}
+.season-card .s-wind{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;letter-spacing:.05em;margin-bottom:.3rem}
+.season-card .s-name{font-family:var(--font-body);font-size:.8rem;font-style:italic;opacity:.8;margin-bottom:1rem}
+.season-card .s-count{font-family:var(--font-display);font-size:2.8rem;font-weight:700;opacity:.2;position:absolute;bottom:1rem;right:1.2rem}
+.sc-0{background:var(--notos-bg);color:var(--notos-ink)}.sc-1{background:var(--argeste-bg);color:var(--argeste-ink)}.sc-2{background:var(--boree-bg);color:var(--boree-ink)}.sc-3{background:var(--zephyr-bg);color:var(--zephyr-ink)}
+.links-section{max-width:540px;margin:0 auto;padding:3rem 1.5rem 4rem}
+.links-section h2{font-family:var(--font-display);font-size:.8rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(184,115,51,.25)}
+.link-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;margin-bottom:.75rem;background:var(--white);border:1px solid rgba(184,115,51,.15);border-radius:12px;transition:all .3s cubic-bezier(.25,.46,.45,.94);cursor:pointer;position:relative;overflow:hidden}
+.link-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--copper);opacity:0;transition:opacity .3s}
+.link-card:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(139,69,19,.12);border-color:var(--copper)}
+.link-card:hover::before{opacity:1}
+.link-icon{flex-shrink:0;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:1.3rem}
+.link-text{flex:1}.link-text .lt{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:2px}.link-text .ld{font-size:.78rem;color:var(--gray);line-height:1.3}
+.link-arrow{flex-shrink:0;color:var(--copper);opacity:0;transform:translateX(-8px);transition:all .3s;font-size:1.1rem}
+.link-card:hover .link-arrow{opacity:1;transform:translateX(0)}
+.ic-notos{background:var(--notos-bg);color:var(--notos-accent)}.ic-argeste{background:var(--argeste-bg);color:var(--argeste-accent)}.ic-boree{background:var(--boree-bg);color:var(--boree-ink)}.ic-zephyr{background:var(--zephyr-bg);color:var(--zephyr-accent)}.ic-yeay{background:var(--yeay-bg);color:var(--yeay-accent)}.ic-blog{background:#F0EBE3;color:var(--copper-dark)}.ic-nl{background:#E8F0F8;color:#1F4A66}.ic-cmd{background:#FFF0F0;color:#C0392B}.ic-soc{background:#F5F5F5;color:var(--ink)}
+.quote-section{max-width:600px;margin:0 auto;padding:4rem 2rem;text-align:center}
+.quote-section blockquote{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.6rem);font-style:italic;color:var(--ink-soft);line-height:1.8;margin-bottom:1rem}
+.quote-section cite{font-family:var(--font-body);font-size:.8rem;color:var(--gray);font-style:normal}
+footer{text-align:center;padding:3rem 1.5rem;border-top:1px solid rgba(184,115,51,.15)}
+footer .fs{font-family:var(--font-display);font-size:1.5rem;color:var(--copper);margin-bottom:1rem}
+footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
+@media(max-width:640px){.seasons-strip{grid-template-columns:repeat(2,1fr)}.season-card{min-height:200px;padding:2rem 1rem}.logo-container{width:160px;height:160px}.links-section{padding:2rem 1rem 3rem}}
+@media(max-width:380px){.seasons-strip{grid-template-columns:1fr}}
+.cms-gate{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:20000;align-items:center;justify-content:center}.cms-gate.active{display:flex}
+.cms-gate-box{background:#1a1a1a;border-radius:16px;padding:40px;max-width:420px;width:90%;color:#e0e0e0;font-family:system-ui,sans-serif;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.cms-gate-box h3{font-size:18px;color:#C89F5B;margin-bottom:8px}.cms-gate-box p{font-size:12px;color:#888;margin-bottom:20px;line-height:1.5}
+.cms-gate-box input{width:100%;padding:10px 14px;background:#2a2a2a;border:1px solid #3a3a3a;border-radius:8px;color:#e0e0e0;font-size:14px;margin-bottom:8px;font-family:monospace}
+.cms-gate-box input:focus{border-color:#C89F5B;outline:none}
+.cms-gate-box .g-row{display:flex;gap:8px;margin-bottom:16px}.cms-gate-box .g-row input{margin-bottom:0}.cms-gate-box .g-row input:first-child{flex:2}.cms-gate-box .g-row input:last-child{flex:1}
+.cms-gate-actions{display:flex;gap:8px}
+.cms-gate-btn{padding:10px 20px;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;transition:all .2s}
+.cms-gate-btn.primary{background:#C89F5B;color:#1a1a1a;flex:1}.cms-gate-btn.primary:hover{background:#B87333}
+.cms-gate-btn.cancel{background:#333;color:#999}.cms-gate-btn.cancel:hover{background:#444;color:#ccc}
+.cms-gate-err{font-size:12px;color:#E74C3C;margin-top:8px;display:none}.cms-gate-err.show{display:block}
+.cms-toggle{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--copper);color:var(--white);border:none;font-size:1.3rem;cursor:pointer;z-index:10000;display:none;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:transform .3s;align-items:center;justify-content:center}
+.cms-toggle:hover{transform:scale(1.1)}.cms-toggle.vis{display:flex}
+.cms-panel{position:fixed;top:0;right:-500px;width:500px;max-width:90vw;height:100vh;background:#1a1a1a;color:#e0e0e0;z-index:10001;transition:right .4s cubic-bezier(.25,.46,.45,.94);overflow-y:auto;box-shadow:-8px 0 40px rgba(0,0,0,.5);font-family:system-ui,sans-serif;font-size:14px}
+.cms-panel.open{right:0}
+.cms-ph{position:sticky;top:0;background:#222;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;z-index:10;border-bottom:1px solid #333}
+.cms-ph h3{font-size:16px;font-weight:700;color:#C89F5B}
+.cms-x{background:none;border:none;color:#999;font-size:20px;cursor:pointer}.cms-x:hover{color:#fff}
+.cms-s{padding:16px 20px;border-bottom:1px solid #2a2a2a}.cms-s h4{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#C89F5B;margin-bottom:12px}
+.cms-f{margin-bottom:12px}.cms-f label{display:block;font-size:11px;color:#888;margin-bottom:4px;text-transform:uppercase;letter-spacing:1px}
+.cms-f input,.cms-f textarea,.cms-f select{width:100%;padding:8px 10px;background:#2a2a2a;border:1px solid #3a3a3a;border-radius:6px;color:#e0e0e0;font-size:13px;font-family:inherit}
+.cms-f input:focus,.cms-f textarea:focus,.cms-f select:focus{border-color:#C89F5B;outline:none}
+.cms-f textarea{min-height:60px;resize:vertical}.cms-f input[type="color"]{height:36px;padding:2px;cursor:pointer}
+.cms-cr{display:flex;gap:8px;align-items:center}.cms-cr input[type="color"]{width:48px;flex-shrink:0}.cms-cr input[type="text"]{flex:1}
+.cms-btn{padding:10px 18px;border:none;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;transition:all .2s}
+.cms-btn-deploy{background:#27AE60;color:#fff;font-size:14px}.cms-btn-deploy:hover{background:#2ECC71}
+.cms-btn-sec{background:#333;color:#ccc}.cms-btn-sec:hover{background:#444}
+.cms-btn-danger{background:#c0392b;color:#fff}.cms-btn-danger:hover{background:#e74c3c}
+.cms-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.cms-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;display:none}.cms-overlay.open{display:block}
+.cms-hint{font-size:10px;color:#666;margin-top:4px;font-style:italic}
+.cms-status{padding:8px 16px;margin:8px 0;border-radius:6px;font-size:12px;display:none}
+.cms-status.ok{display:block;background:#1a3a1a;color:#27AE60;border:1px solid #27AE60}
+.cms-status.err{display:block;background:#3a1a1a;color:#E74C3C;border:1px solid #E74C3C}
+.cms-status.info{display:block;background:#1a2a3a;color:#3498DB;border:1px solid #3498DB}
+.cms-gh-info{padding:12px 16px;background:#1a2a1a;border:1px solid #2a4a2a;border-radius:6px;font-size:12px;color:#4CAF50;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="logo-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B87333"/>
+      <stop offset="100%" stop-color="#8B4513"/>
+    </linearGradient>
+    <linearGradient id="heartInner" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#C89F5B" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#B87333" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#4A2C0A" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle (optional — remove for transparent) -->
+  <circle cx="200" cy="200" r="195" fill="none" stroke="#C89F5B" stroke-width="1" opacity="0.2"/>
+
+  <!-- Rose des vents — cercle extérieur -->
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#C89F5B" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#C89F5B" stroke-width="0.4" opacity="0.15" stroke-dasharray="3 5"/>
+
+  <!-- Graduations fines autour du cercle -->
+  <g stroke="#C89F5B" stroke-width="0.6" opacity="0.25">
+    <!-- 16 tirets -->
+    <line x1="200" y1="22" x2="200" y2="30"/>
+    <line x1="200" y1="370" x2="200" y2="378"/>
+    <line x1="22" y1="200" x2="30" y2="200"/>
+    <line x1="370" y1="200" x2="378" y2="200"/>
+    <!-- Diagonales -->
+    <line x1="74" y1="74" x2="80" y2="80"/>
+    <line x1="326" y1="74" x2="320" y2="80"/>
+    <line x1="74" y1="326" x2="80" y2="320"/>
+    <line x1="326" y1="326" x2="320" y2="320"/>
+    <!-- Intermédiaires -->
+    <line x1="200" y1="22" x2="200" y2="28"/>
+    <line x1="130" y1="34" x2="133" y2="40"/>
+    <line x1="270" y1="34" x2="267" y2="40"/>
+    <line x1="34" y1="130" x2="40" y2="133"/>
+    <line x1="34" y1="270" x2="40" y2="267"/>
+    <line x1="366" y1="130" x2="360" y2="133"/>
+    <line x1="366" y1="270" x2="360" y2="267"/>
+    <line x1="130" y1="366" x2="133" y2="360"/>
+    <line x1="270" y1="366" x2="267" y2="360"/>
+  </g>
+
+  <!-- 4 directions cardinales — les 4 vents -->
+
+  <!-- Nord — Borée (bleu nuit) -->
+  <g>
+    <line x1="200" y1="28" x2="200" y2="68" stroke="#1F4A66" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+    <polygon points="200,16 194,32 206,32" fill="#1F4A66" opacity="0.75"/>
+    <text x="200" y="58" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#1F4A66" font-weight="600" opacity="0.6">B</text>
+  </g>
+
+  <!-- Sud — Notos (ocre cuivre) -->
+  <g>
+    <line x1="200" y1="332" x2="200" y2="372" stroke="#B87333" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+    <polygon points="200,384 194,368 206,368" fill="#B87333" opacity="0.75"/>
+    <text x="200" y="352" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#B87333" font-weight="600" opacity="0.6">N</text>
+  </g>
+
+  <!-- Ouest — Zéphyr (vert forêt) -->
+  <g>
+    <line x1="28" y1="200" x2="68" y2="200" stroke="#3B5C3A" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+    <polygon points="16,200 32,194 32,206" fill="#3B5C3A" opacity="0.75"/>
+    <text x="50" y="204" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#3B5C3A" font-weight="600" opacity="0.6">Z</text>
+  </g>
+
+  <!-- Est — Argeste (ardoise) -->
+  <g>
+    <line x1="332" y1="200" x2="372" y2="200" stroke="#6B6B6B" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+    <polygon points="384,200 368,194 368,206" fill="#6B6B6B" opacity="0.75"/>
+    <text x="350" y="204" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#6B6B6B" font-weight="600" opacity="0.6">A</text>
+  </g>
+
+  <!-- Lignes diagonales fines -->
+  <g stroke="#C89F5B" stroke-width="1" opacity="0.2" stroke-linecap="round">
+    <line x1="58" y1="58" x2="82" y2="82"/>
+    <line x1="342" y1="58" x2="318" y2="82"/>
+    <line x1="58" y1="342" x2="82" y2="318"/>
+    <line x1="342" y1="342" x2="318" y2="318"/>
+  </g>
+
+  <!-- Cœur central -->
+  <g filter="url(#glow)">
+    <!-- Cœur principal — Bézier organique, légèrement asymétrique -->
+    <path d="
+      M 200 290
+      C 200 290, 115 225, 115 168
+      C 115 128, 148 108, 175 114
+      C 190 118, 200 135, 200 135
+      C 200 135, 210 118, 225 114
+      C 252 108, 285 128, 285 168
+      C 285 225, 200 290, 200 290
+      Z
+    " fill="url(#heartGrad)" filter="url(#softShadow)"/>
+
+    <!-- Éclat intérieur -->
+    <path d="
+      M 200 270
+      C 200 270, 135 215, 135 173
+      C 135 145, 158 130, 178 135
+      C 190 138, 200 150, 200 150
+      C 200 150, 210 138, 222 135
+      C 242 130, 265 145, 265 173
+      C 265 215, 200 270, 200 270
+      Z
+    " fill="url(#heartInner)"/>
+
+    <!-- Croix au centre du cœur -->
+    <line x1="200" y1="152" x2="200" y2="240" stroke="#FFFBF0" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+    <line x1="164" y1="188" x2="236" y2="188" stroke="#FFFBF0" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
+
+    <!-- Point lumineux au centre de la croix -->
+    <circle cx="200" cy="188" r="3" fill="#FFFBF0" opacity="0.4"/>
+  </g>
+
+  <!-- Texte circulaire (nom du projet) — optionnel, décommentez si voulu
+  <path id="textCircle" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" fill="none"/>
+  <text font-family="Cormorant Garamond, Georgia, serif" font-size="11" fill="#C89F5B" opacity="0.4" letter-spacing="6">
+    <textPath href="#textCircle" startOffset="15%">C Œ U R   A S S A I S O N N É</textPath>
+  </text>
+  -->
+</svg>
+  </div>
+  <h1 class="hero-title" id="v-title"></h1>
+  <p class="hero-subtitle" id="v-subtitle"></p>
+  <p class="hero-author" id="v-author"></p>
+  <div class="hero-epigraph" id="v-epigraph"></div>
+  <p class="hero-scroll">↓ découvrir</p>
+</section>
+<section class="seasons-strip" id="v-seasons"></section>
+<section class="links-section" id="v-links"></section>
+<section class="quote-section"><blockquote id="v-quote"></blockquote><cite id="v-cite"></cite></section>
+<footer><div class="fs">✦</div><p id="v-footer"></p></footer>
+
+<!-- CMS Login Gate -->
+<div class="cms-gate" id="cms-gate">
+  <div class="cms-gate-box">
+    <h3>🔑 Administration — Cœur Assaisonné</h3>
+    <p>Connectez-vous avec votre GitHub Personal Access Token.<br>Créez-en un sur github.com/settings/tokens → Fine-grained → Contents: Read+Write</p>
+    <input type="password" id="gate-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+    <div class="g-row">
+      <input type="text" id="gate-repo" value="jydielrecords/coeur-assaisonne" placeholder="owner/repo">
+      <input type="text" id="gate-branch" value="main" placeholder="branche">
+    </div>
+    <div class="cms-gate-actions">
+      <button class="cms-gate-btn primary" id="gate-login">Se connecter</button>
+      <button class="cms-gate-btn cancel" id="gate-cancel">Annuler</button>
+    </div>
+    <div class="cms-gate-err" id="gate-err"></div>
+  </div>
+</div>
+
+<button class="cms-toggle" id="cms-btn" title="Administration">⚙</button>
+<div class="cms-overlay" id="cms-ov"></div>
+
+<div class="cms-panel" id="cms-panel">
+  <div class="cms-ph"><h3>⚙ Administration</h3><button class="cms-x" id="cms-close">✕</button></div>
+  <div class="cms-s"><h4>🔗 GitHub</h4><div class="cms-gh-info" id="gh-info">Connecté</div><div class="cms-actions"><button class="cms-btn cms-btn-sec" id="gh-logout">🔓 Déconnecter</button></div></div>
+  <div class="cms-s"><h4>Thème & couleurs</h4>
+    <div class="cms-f"><label>Fond</label><div class="cms-cr"><input type="color" id="c-cream" value="#FEF6E4"><input type="text" id="c-cream-h" value="#FEF6E4"></div></div>
+    <div class="cms-f"><label>Accent cuivre</label><div class="cms-cr"><input type="color" id="c-copper" value="#B87333"><input type="text" id="c-copper-h" value="#B87333"></div></div>
+    <div class="cms-f"><label>Encre</label><div class="cms-cr"><input type="color" id="c-ink" value="#1F2428"><input type="text" id="c-ink-h" value="#1F2428"></div></div>
+    <div class="cms-f"><label>Gris</label><div class="cms-cr"><input type="color" id="c-gray" value="#707070"><input type="text" id="c-gray-h" value="#707070"></div></div>
+  </div>
+  <div class="cms-s"><h4>Polices</h4>
+    <div class="cms-f"><label>Titres</label><select id="f-display"><option value="'Cormorant Garamond',Georgia,serif">Cormorant Garamond</option><option value="'Playfair Display',Georgia,serif">Playfair Display</option><option value="Georgia,serif">Georgia</option><option value="'EB Garamond',Georgia,serif">EB Garamond</option><option value="'Crimson Text',Georgia,serif">Crimson Text</option></select></div>
+    <div class="cms-f"><label>Corps</label><select id="f-body"><option value="'Lora',Georgia,serif">Lora</option><option value="Georgia,serif">Georgia</option><option value="'Crimson Text',Georgia,serif">Crimson Text</option><option value="'Source Serif 4',Georgia,serif">Source Serif</option></select></div>
+  </div>
+  <div class="cms-s"><h4>En-tête</h4>
+    <div class="cms-f"><label>Titre</label><input type="text" id="e-title"></div>
+    <div class="cms-f"><label>Sous-titre</label><input type="text" id="e-subtitle"></div>
+    <div class="cms-f"><label>Auteur</label><input type="text" id="e-author"></div>
+    <div class="cms-f"><label>Épigraphe (HTML)</label><textarea id="e-epigraph"></textarea></div>
+  </div>
+  <div class="cms-s"><h4>Saisons</h4><div id="cms-seasons-fields"></div></div>
+  <div class="cms-s"><h4>Liens</h4><div id="cms-links-fields"></div></div>
+  <div class="cms-s"><h4>Citation</h4><div class="cms-f"><label>Texte (HTML)</label><textarea id="e-quote"></textarea></div><div class="cms-f"><label>Attribution</label><input type="text" id="e-cite"></div></div>
+  <div class="cms-s"><h4>Pied de page</h4><div class="cms-f"><label>Texte (HTML)</label><textarea id="e-footer"></textarea></div></div>
+  <div class="cms-s" style="padding-bottom:80px"><h4>Actions</h4>
+    <div class="cms-status" id="deploy-status"></div>
+    <div class="cms-actions">
+      <button class="cms-btn cms-btn-deploy" id="btn-deploy">🚀 Déployer</button>
+      <button class="cms-btn cms-btn-sec" id="btn-export">📤 Exporter</button>
+      <button class="cms-btn cms-btn-sec" id="btn-import">📥 Importer</button>
+      <button class="cms-btn cms-btn-danger" id="btn-reset">🔄 Réinitialiser</button>
+    </div>
+    <div class="cms-hint" style="margin-top:12px"><strong>Déployer</strong> = commite config.json sur GitHub → Cloudflare redéploie (~30 s).</div>
+    <input type="file" id="import-file" accept=".json" style="display:none">
+  </div>
+</div>
+
+<script>
+(function(){
+// ===== DEFAULT CONFIG EMBEDDED — site works even without config.json =====
+const DEFAULT_CONFIG = {"site": {"title": "C\u0153ur assaisonn\u00e9", "subtitle": "T\u00e9tralogie po\u00e9tique en quatre vents", "author": "Johnny Y. Nam \u00b7 JyDiel Records", "epigraph": "Que vienne le temps<br>Que changent les saisons<br>Il demeure le m\u00eame<br>Ses ar\u00f4mes diff\u00e8rent"}, "theme": {"colorCream": "#FEF6E4", "colorCopper": "#B87333", "colorInk": "#1F2428", "colorGray": "#707070", "fontDisplay": "'Cormorant Garamond',Georgia,serif", "fontBody": "'Lora',Georgia,serif"}, "seasons": [{"wind": "Notos", "name": "Le d\u00e9sert", "count": 127}, {"wind": "Argeste", "name": "L'apprentissage", "count": 92}, {"wind": "Bor\u00e9e", "name": "L'alliance", "count": 82}, {"wind": "Z\u00e9phyr", "name": "La transmission", "count": 24}], "links": {"notos": {"url": "#", "title": "Notos \u00b7 M\u00e9moires d'un autre \u00e9t\u00e9", "desc": "127 po\u00e8mes \u00b7 Le d\u00e9sert \u00b7 2013-2021"}, "argeste": {"url": "#", "title": "Argeste \u00b7 M\u00e9moire d'un autre automne", "desc": "92 po\u00e8mes \u00b7 L'apprentissage \u00b7 2021-2022"}, "boree": {"url": "#", "title": "Bor\u00e9e \u00b7 M\u00e9moire d'un autre hiver", "desc": "82 po\u00e8mes \u00b7 L'alliance \u00b7 2022-2023"}, "zephyr": {"url": "#", "title": "Z\u00e9phyr \u00b7 M\u00e9moire de tous les printemps", "desc": "24 po\u00e8mes \u00b7 La transmission \u00b7 2023-2025"}, "yeay": {"url": "#", "title": "Yeay \u00b7 Compilation annuelle", "desc": "Po\u00e8mes de gratitude d'anniversaire \u00b7 depuis 2017"}, "blog": {"url": "https://jydielrecords.wixsite.com/entreici-et-ailleurs", "title": "Blog \u00b7 Entre ici et ailleurs", "desc": "10 po\u00e8mes en acc\u00e8s libre"}, "newsletter": {"url": "#", "title": "Newsletter mensuelle", "desc": "Un po\u00e8me, un \u00e9dito, les nouvelles du projet"}, "commande": {"url": "#", "title": "Cartes & po\u00e8mes personnalis\u00e9s", "desc": "Commandez une carte calligraphi\u00e9e, un po\u00e8me sur mesure, une d\u00e9dicace"}, "tiktok": {"url": "#", "title": "TikTok \u00b7 @jydielrecords", "desc": "Po\u00e8mes lus \u00e0 voix haute chaque semaine"}, "instagram": {"url": "#", "title": "Instagram \u00b7 @jydielrecords", "desc": "Carrousels, sentences, communaut\u00e9"}}, "quote": {"text": "Mon c\u0153ur \u00e0 moi qui se teinte<br>De blanc de noir d'ocre de marron<br>Mon c\u0153ur \u00e0 moi o\u00f9 sont ceintes<br>Plumes, nuages, poussi\u00e8re et goudron.", "cite": "\u2014 C\u0153ur assaisonn\u00e9, J.y.D., 30 novembre 2022"}, "footer": {"text": "C\u0153ur assaisonn\u00e9 \u00b7 T\u00e9tralogie en quatre vents<br>325 po\u00e8mes \u00b7 2013-2025<br><br>JyDiel Records \u00b7 \u00a9 2026"}, "github": {"repo": "jydielrecords/coeur-assaisonne", "branch": "main", "configPath": "config.json"}};
+
+const LINK_ICONS={notos:'☀',argeste:'◇',boree:'❄',zephyr:'❧',yeay:'♫',blog:'✎',newsletter:'✉',commande:'✦',tiktok:'▶',instagram:'◉'};
+const LINK_IC={notos:'ic-notos',argeste:'ic-argeste',boree:'ic-boree',zephyr:'ic-zephyr',yeay:'ic-yeay',blog:'ic-blog',newsletter:'ic-nl',commande:'ic-cmd',tiktok:'ic-soc',instagram:'ic-soc'};
+const GROUPS=[{title:'Les recueils',keys:['notos','argeste','boree','zephyr']},{title:'Yeay · Gratitudes de décembre',keys:['yeay']},{title:'Lire et écouter',keys:['blog','newsletter']},{title:'Commande spéciale',keys:['commande']},{title:'Suivre',keys:['tiktok','instagram']}];
+let CFG=null,GH_TOKEN='',GH_REPO='',GH_BRANCH='';
+
+function render(c){
+  CFG=c;const r=document.documentElement.style;
+  r.setProperty('--cream',c.theme.colorCream);r.setProperty('--copper',c.theme.colorCopper);r.setProperty('--ink',c.theme.colorInk);r.setProperty('--gray',c.theme.colorGray);
+  r.setProperty('--font-display',c.theme.fontDisplay);r.setProperty('--font-body',c.theme.fontBody);document.body.style.background=c.theme.colorCream;
+  document.getElementById('v-title').textContent=c.site.title;document.getElementById('v-subtitle').textContent=c.site.subtitle;
+  document.getElementById('v-author').textContent=c.site.author;document.getElementById('v-epigraph').innerHTML=c.site.epigraph;
+  const ss=document.getElementById('v-seasons');ss.innerHTML='';
+  c.seasons.forEach((s,i)=>{ss.innerHTML+=`<div class="season-card sc-${i}"><span class="s-label">Vent ${['I','II','III','IV'][i]}</span><span class="s-wind">${s.wind}</span><span class="s-name">${s.name}</span><span class="s-count">${s.count}</span></div>`;});
+  const ls=document.getElementById('v-links');ls.innerHTML='';
+  GROUPS.forEach(g=>{ls.innerHTML+=`<h2>${g.title}</h2>`;g.keys.forEach(k=>{const l=c.links[k];if(!l)return;const href=l.url&&l.url!=='#'?l.url:'#';const tg=href!=='#'?' target="_blank" rel="noopener"':'';ls.innerHTML+=`<a href="${href}" class="link-card"${tg}><span class="link-icon ${LINK_IC[k]}">${LINK_ICONS[k]}</span><span class="link-text"><span class="lt">${l.title}</span><span class="ld">${l.desc}</span></span><span class="link-arrow">→</span></a>`;});});
+  document.getElementById('v-quote').innerHTML=c.quote.text;document.getElementById('v-cite').textContent=c.quote.cite;document.getElementById('v-footer').innerHTML=c.footer.text;
+  document.title=c.site.title+' — '+c.site.author;
+}
+
+function populateCMS(c){
+  const sc=(id,v)=>{const p=document.getElementById(id),h=document.getElementById(id+'-h');if(p)p.value=v;if(h)h.value=v;};
+  sc('c-cream',c.theme.colorCream);sc('c-copper',c.theme.colorCopper);sc('c-ink',c.theme.colorInk);sc('c-gray',c.theme.colorGray);
+  document.getElementById('f-display').value=c.theme.fontDisplay;document.getElementById('f-body').value=c.theme.fontBody;
+  document.getElementById('e-title').value=c.site.title;document.getElementById('e-subtitle').value=c.site.subtitle;
+  document.getElementById('e-author').value=c.site.author;document.getElementById('e-epigraph').value=c.site.epigraph;
+  const sf=document.getElementById('cms-seasons-fields');sf.innerHTML='';
+  c.seasons.forEach((s,i)=>{sf.innerHTML+=`<div class="cms-f"><label>Vent ${i+1} — Nom</label><input type="text" id="s-wind-${i}" value="${s.wind}"></div><div class="cms-f"><label>Vent ${i+1} — Saison</label><input type="text" id="s-name-${i}" value="${s.name}"></div><div class="cms-f"><label>Vent ${i+1} — Nombre</label><input type="number" id="s-count-${i}" value="${s.count}"></div>`;});
+  const lf=document.getElementById('cms-links-fields');lf.innerHTML='';
+  Object.entries(c.links).forEach(([k,v])=>{lf.innerHTML+=`<div class="cms-f"><label>${k.toUpperCase()} — Titre</label><input type="text" id="l-title-${k}" value="${v.title}"></div><div class="cms-f"><label>${k.toUpperCase()} — Description</label><input type="text" id="l-desc-${k}" value="${v.desc}"></div><div class="cms-f"><label>${k.toUpperCase()} — URL</label><input type="url" id="l-url-${k}" value="${v.url}" placeholder="https://..."></div>`;});
+  document.getElementById('e-quote').value=c.quote.text;document.getElementById('e-cite').value=c.quote.cite;document.getElementById('e-footer').value=c.footer.text;
+}
+
+function collectConfig(){
+  const c=JSON.parse(JSON.stringify(CFG));
+  c.theme.colorCream=document.getElementById('c-cream').value;c.theme.colorCopper=document.getElementById('c-copper').value;
+  c.theme.colorInk=document.getElementById('c-ink').value;c.theme.colorGray=document.getElementById('c-gray').value;
+  c.theme.fontDisplay=document.getElementById('f-display').value;c.theme.fontBody=document.getElementById('f-body').value;
+  c.site.title=document.getElementById('e-title').value;c.site.subtitle=document.getElementById('e-subtitle').value;
+  c.site.author=document.getElementById('e-author').value;c.site.epigraph=document.getElementById('e-epigraph').value;
+  c.seasons.forEach((s,i)=>{s.wind=document.getElementById('s-wind-'+i).value;s.name=document.getElementById('s-name-'+i).value;s.count=parseInt(document.getElementById('s-count-'+i).value)||0;});
+  Object.keys(c.links).forEach(k=>{const t=document.getElementById('l-title-'+k),d=document.getElementById('l-desc-'+k),u=document.getElementById('l-url-'+k);if(t)c.links[k].title=t.value;if(d)c.links[k].desc=d.value;if(u)c.links[k].url=u.value;});
+  c.quote.text=document.getElementById('e-quote').value;c.quote.cite=document.getElementById('e-cite').value;c.footer.text=document.getElementById('e-footer').value;
+  c.github={repo:GH_REPO,branch:GH_BRANCH,configPath:'config.json'};return c;
+}
+
+// GitHub API
+function ghH(){return{'Authorization':'Bearer '+GH_TOKEN,'Accept':'application/vnd.github+json','Content-Type':'application/json'};}
+async function ghGet(repo,branch,path){const r=await fetch(`https://api.github.com/repos/${repo}/contents/${path}?ref=${branch}`,{headers:ghH()});if(r.status===404)return null;if(!r.ok)throw new Error(r.status);return r.json();}
+async function ghPut(repo,branch,path,content,sha){const body={message:'CMS — '+new Date().toISOString().slice(0,16),content:btoa(unescape(encodeURIComponent(content))),branch};if(sha)body.sha=sha;const r=await fetch(`https://api.github.com/repos/${repo}/contents/${path}`,{method:'PUT',headers:ghH(),body:JSON.stringify(body)});if(!r.ok)throw new Error(r.status+' '+await r.text());return r.json();}
+function showStatus(id,msg,type){const el=document.getElementById(id);el.className='cms-status '+type;el.textContent=msg;if(type==='ok')setTimeout(()=>el.style.display='none',5000);}
+
+// Auth gate
+const gate=document.getElementById('cms-gate'),panel=document.getElementById('cms-panel'),overlay=document.getElementById('cms-ov'),toggle=document.getElementById('cms-btn');
+
+async function tryAdminAccess(){
+  if(window.location.hash!=='#admin')return;
+  const t=localStorage.getItem('ca_gh_token'),repo=localStorage.getItem('ca_gh_repo')||'jydielrecords/coeur-assaisonne',branch=localStorage.getItem('ca_gh_branch')||'main';
+  if(t){GH_TOKEN=t;GH_REPO=repo;GH_BRANCH=branch;
+    try{const r=await fetch(`https://api.github.com/repos/${repo}`,{headers:ghH()});if(r.ok){activate((await r.json()).full_name);return;}}catch(e){}
+    localStorage.removeItem('ca_gh_token');
+  }
+  document.getElementById('gate-repo').value=repo;document.getElementById('gate-branch').value=branch;
+  gate.classList.add('active');
+}
+
+function activate(name){toggle.classList.add('vis');document.getElementById('gh-info').textContent='✅ '+name+' ('+GH_BRANCH+')';}
+
+document.getElementById('gate-login').addEventListener('click',async()=>{
+  const token=document.getElementById('gate-token').value.trim(),repo=document.getElementById('gate-repo').value.trim(),branch=document.getElementById('gate-branch').value.trim(),err=document.getElementById('gate-err');
+  if(!token||!repo){err.textContent='Champs requis.';err.classList.add('show');return;}
+  GH_TOKEN=token;GH_REPO=repo;GH_BRANCH=branch;
+  try{const r=await fetch(`https://api.github.com/repos/${repo}`,{headers:ghH()});if(!r.ok)throw new Error('Erreur '+r.status);
+    localStorage.setItem('ca_gh_token',token);localStorage.setItem('ca_gh_repo',repo);localStorage.setItem('ca_gh_branch',branch);
+    gate.classList.remove('active');err.classList.remove('show');activate((await r.json()).full_name);
+  }catch(e){err.textContent='❌ '+e.message;err.classList.add('show');}
+});
+document.getElementById('gate-cancel').addEventListener('click',()=>{gate.classList.remove('active');window.location.hash='';});
+document.getElementById('gh-logout').addEventListener('click',()=>{localStorage.removeItem('ca_gh_token');GH_TOKEN='';toggle.classList.remove('vis');panel.classList.remove('open');overlay.classList.remove('open');window.location.hash='';});
+
+toggle.addEventListener('click',()=>{panel.classList.add('open');overlay.classList.add('open');});
+document.getElementById('cms-close').addEventListener('click',()=>{panel.classList.remove('open');overlay.classList.remove('open');});
+overlay.addEventListener('click',()=>{panel.classList.remove('open');overlay.classList.remove('open');});
+
+['c-cream','c-copper','c-ink','c-gray'].forEach(id=>{const p=document.getElementById(id),h=document.getElementById(id+'-h');if(p&&h){p.addEventListener('input',()=>h.value=p.value);h.addEventListener('input',()=>{if(/^#[0-9A-Fa-f]{6}$/.test(h.value))p.value=h.value;});}});
+panel.addEventListener('input',()=>{render(collectConfig());});
+
+document.getElementById('btn-deploy').addEventListener('click',async()=>{
+  const btn=document.getElementById('btn-deploy'),c=collectConfig(),content=JSON.stringify(c,null,2);
+  btn.textContent='⏳ Déploiement...';btn.disabled=true;
+  try{const existing=await ghGet(GH_REPO,GH_BRANCH,'config.json');await ghPut(GH_REPO,GH_BRANCH,'config.json',content,existing?existing.sha:undefined);render(c);
+    showStatus('deploy-status','✅ Déployé ! Cloudflare redéploie (~30 s).','ok');btn.textContent='✅ Déployé !';setTimeout(()=>{btn.textContent='🚀 Déployer';btn.disabled=false;},3000);
+  }catch(e){showStatus('deploy-status','❌ '+e.message,'err');btn.textContent='🚀 Déployer';btn.disabled=false;}
+});
+document.getElementById('btn-export').addEventListener('click',()=>{const b=new Blob([JSON.stringify(collectConfig(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='config.json';a.click();});
+document.getElementById('btn-import').addEventListener('click',()=>document.getElementById('import-file').click());
+document.getElementById('import-file').addEventListener('change',function(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{try{const c=JSON.parse(ev.target.result);render(c);populateCMS(c);showStatus('deploy-status','📥 Importé. Déployez pour publier.','info');}catch(err){showStatus('deploy-status','❌ '+err.message,'err');}};r.readAsText(f);});
+document.getElementById('btn-reset').addEventListener('click',()=>{if(confirm('Réinitialiser ?'))location.reload();});
+
+// ===== INIT: render immediately from embedded config, then try config.json =====
+async function init(){
+  // 1. Render immediately from embedded defaults (no blank page ever)
+  render(DEFAULT_CONFIG);
+  populateCMS(DEFAULT_CONFIG);
+
+  // 2. Try to load config.json (overrides defaults if found)
+  try{
+    const r=await fetch('config.json?v='+Date.now());
+    if(r.ok){const c=await r.json();render(c);populateCMS(c);}
+  }catch(e){/* config.json not found — defaults already rendered, site works fine */}
+
+  // 3. Check admin access
+  tryAdminAccess();
+}
+window.addEventListener('hashchange',()=>{if(window.location.hash==='#admin')tryAdminAccess();});
+init();
+})();
+</script>
+</body>
+</html>
