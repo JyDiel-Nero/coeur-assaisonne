@@ -1,4 +1,4 @@
-<!-- COEUR-ASSAISONNE-V5-2026-04-20 -->
+<!-- COEUR-ASSAISONNE-V6-2026-04-20 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,9 +24,9 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .logo-container{position:relative;width:200px;height:200px;margin-bottom:2rem;z-index:2}
 .logo-container svg{width:100%;height:100%}
 @keyframes heartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
-.heart-group{animation:heartPulse 4s ease-in-out infinite;transform-origin:200px 200px}
+.heart-group{animation:heartPulse 4s ease-in-out infinite;transform-origin:center}
 @keyframes compassSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.compass-outer{animation:compassSpin 120s linear infinite;transform-origin:200px 200px}
+.compass-outer{animation:compassSpin 120s linear infinite;transform-origin:center}
 .hero-title{font-family:var(--font-display);font-size:clamp(2.2rem,6vw,4rem);font-weight:700;color:var(--ink);text-align:center;letter-spacing:.02em;line-height:1.15;margin-bottom:.5rem;z-index:2;position:relative}
 .hero-subtitle{font-family:var(--font-display);font-size:clamp(1rem,2.5vw,1.3rem);font-style:italic;color:var(--copper);text-align:center;margin-bottom:.3rem;z-index:2;position:relative}
 .hero-author{font-family:var(--font-body);font-size:.85rem;color:var(--gray);letter-spacing:.15em;text-transform:uppercase;margin-top:1rem;z-index:2;position:relative}
@@ -105,132 +105,59 @@ footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
   <div class="logo-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
-    <linearGradient id="heartGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#B87333"/>
-      <stop offset="100%" stop-color="#8B4513"/>
-    </linearGradient>
-    <linearGradient id="heartInner" x1="0.3" y1="0" x2="0.7" y2="1">
-      <stop offset="0%" stop-color="#C89F5B" stop-opacity="0.3"/>
-      <stop offset="100%" stop-color="#B87333" stop-opacity="0.1"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="softShadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#4A2C0A" flood-opacity="0.15"/>
-    </filter>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#B87333"/><stop offset="100%" stop-color="#8B4513"/></linearGradient>
+    <linearGradient id="hi" x1=".3" y1="0" x2=".7" y2="1"><stop offset="0%" stop-color="#C89F5B" stop-opacity=".3"/><stop offset="100%" stop-color="#B87333" stop-opacity=".1"/></linearGradient>
+    <filter id="gl"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="sh"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#4A2C0A" flood-opacity=".15"/></filter>
   </defs>
 
-  <!-- Background circle (optional — remove for transparent) -->
-  <circle cx="200" cy="200" r="195" fill="none" stroke="#C89F5B" stroke-width="1" opacity="0.2"/>
-
-  <!-- Rose des vents — cercle extérieur -->
-  <circle cx="200" cy="200" r="180" fill="none" stroke="#C89F5B" stroke-width="0.8" opacity="0.3"/>
-  <circle cx="200" cy="200" r="175" fill="none" stroke="#C89F5B" stroke-width="0.4" opacity="0.15" stroke-dasharray="3 5"/>
-
-  <!-- Graduations fines autour du cercle -->
-  <g stroke="#C89F5B" stroke-width="0.6" opacity="0.25">
-    <!-- 16 tirets -->
-    <line x1="200" y1="22" x2="200" y2="30"/>
-    <line x1="200" y1="370" x2="200" y2="378"/>
-    <line x1="22" y1="200" x2="30" y2="200"/>
-    <line x1="370" y1="200" x2="378" y2="200"/>
-    <!-- Diagonales -->
-    <line x1="74" y1="74" x2="80" y2="80"/>
-    <line x1="326" y1="74" x2="320" y2="80"/>
-    <line x1="74" y1="326" x2="80" y2="320"/>
-    <line x1="326" y1="326" x2="320" y2="320"/>
-    <!-- Intermédiaires -->
-    <line x1="200" y1="22" x2="200" y2="28"/>
-    <line x1="130" y1="34" x2="133" y2="40"/>
-    <line x1="270" y1="34" x2="267" y2="40"/>
-    <line x1="34" y1="130" x2="40" y2="133"/>
-    <line x1="34" y1="270" x2="40" y2="267"/>
-    <line x1="366" y1="130" x2="360" y2="133"/>
-    <line x1="366" y1="270" x2="360" y2="267"/>
-    <line x1="130" y1="366" x2="133" y2="360"/>
-    <line x1="270" y1="366" x2="267" y2="360"/>
-  </g>
-
-  <!-- 4 directions cardinales — les 4 vents -->
-
-  <!-- Nord — Borée (bleu nuit) -->
+  <!-- COMPASS — rotates slowly -->
   <g>
-    <line x1="200" y1="28" x2="200" y2="68" stroke="#1F4A66" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
-    <polygon points="200,16 194,32 206,32" fill="#1F4A66" opacity="0.75"/>
-    <text x="200" y="58" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#1F4A66" font-weight="600" opacity="0.6">B</text>
+    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="120s" repeatCount="indefinite"/>
+    <circle cx="200" cy="200" r="180" fill="none" stroke="#C89F5B" stroke-width=".8" opacity=".3"/>
+    <circle cx="200" cy="200" r="175" fill="none" stroke="#C89F5B" stroke-width=".4" opacity=".15" stroke-dasharray="3 5"/>
+    <g stroke="#C89F5B" stroke-width=".6" opacity=".25">
+      <line x1="200" y1="22" x2="200" y2="30"/><line x1="200" y1="370" x2="200" y2="378"/>
+      <line x1="22" y1="200" x2="30" y2="200"/><line x1="370" y1="200" x2="378" y2="200"/>
+      <line x1="74" y1="74" x2="80" y2="80"/><line x1="326" y1="74" x2="320" y2="80"/>
+      <line x1="74" y1="326" x2="80" y2="320"/><line x1="326" y1="326" x2="320" y2="320"/>
+      <line x1="130" y1="34" x2="133" y2="40"/><line x1="270" y1="34" x2="267" y2="40"/>
+      <line x1="34" y1="130" x2="40" y2="133"/><line x1="34" y1="270" x2="40" y2="267"/>
+      <line x1="366" y1="130" x2="360" y2="133"/><line x1="366" y1="270" x2="360" y2="267"/>
+      <line x1="130" y1="366" x2="133" y2="360"/><line x1="270" y1="366" x2="267" y2="360"/>
+    </g>
+    <!-- N=Borée -->
+    <line x1="200" y1="28" x2="200" y2="68" stroke="#1F4A66" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+    <polygon points="200,16 194,32 206,32" fill="#1F4A66" opacity=".75"/>
+    <text x="200" y="58" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="14" fill="#1F4A66" font-weight="600" opacity=".6">B</text>
+    <!-- S=Notos -->
+    <line x1="200" y1="332" x2="200" y2="372" stroke="#B87333" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+    <polygon points="200,384 194,368 206,368" fill="#B87333" opacity=".75"/>
+    <text x="200" y="352" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="14" fill="#B87333" font-weight="600" opacity=".6">N</text>
+    <!-- W=Zéphyr -->
+    <line x1="28" y1="200" x2="68" y2="200" stroke="#3B5C3A" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+    <polygon points="16,200 32,194 32,206" fill="#3B5C3A" opacity=".75"/>
+    <text x="50" y="204" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="14" fill="#3B5C3A" font-weight="600" opacity=".6">Z</text>
+    <!-- E=Argeste -->
+    <line x1="332" y1="200" x2="372" y2="200" stroke="#6B6B6B" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+    <polygon points="384,200 368,194 368,206" fill="#6B6B6B" opacity=".75"/>
+    <text x="350" y="204" text-anchor="middle" font-family="Cormorant Garamond,Georgia,serif" font-size="14" fill="#6B6B6B" font-weight="600" opacity=".6">A</text>
+    <!-- Diagonals -->
+    <g stroke="#C89F5B" stroke-width="1" opacity=".2" stroke-linecap="round">
+      <line x1="58" y1="58" x2="82" y2="82"/><line x1="342" y1="58" x2="318" y2="82"/>
+      <line x1="58" y1="342" x2="82" y2="318"/><line x1="342" y1="342" x2="318" y2="318"/>
+    </g>
   </g>
 
-  <!-- Sud — Notos (ocre cuivre) -->
-  <g>
-    <line x1="200" y1="332" x2="200" y2="372" stroke="#B87333" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
-    <polygon points="200,384 194,368 206,368" fill="#B87333" opacity="0.75"/>
-    <text x="200" y="352" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#B87333" font-weight="600" opacity="0.6">N</text>
+  <!-- HEART — pulses gently -->
+  <g filter="url(#gl)">
+    <animateTransform attributeName="transform" type="scale" values="1 1;1.03 1.03;1 1" dur="4s" repeatCount="indefinite" additive="sum"/>
+    <path d="M200 290 C200 290 115 225 115 168 C115 128 148 108 175 114 C190 118 200 135 200 135 C200 135 210 118 225 114 C252 108 285 128 285 168 C285 225 200 290 200 290Z" fill="url(#hg)" filter="url(#sh)"/>
+    <path d="M200 270 C200 270 135 215 135 173 C135 145 158 130 178 135 C190 138 200 150 200 150 C200 150 210 138 222 135 C242 130 265 145 265 173 C265 215 200 270 200 270Z" fill="url(#hi)"/>
+    <line x1="200" y1="152" x2="200" y2="240" stroke="#FFFBF0" stroke-width="2" opacity=".3" stroke-linecap="round"/>
+    <line x1="164" y1="188" x2="236" y2="188" stroke="#FFFBF0" stroke-width="2" opacity=".3" stroke-linecap="round"/>
+    <circle cx="200" cy="188" r="3" fill="#FFFBF0" opacity=".4"/>
   </g>
-
-  <!-- Ouest — Zéphyr (vert forêt) -->
-  <g>
-    <line x1="28" y1="200" x2="68" y2="200" stroke="#3B5C3A" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
-    <polygon points="16,200 32,194 32,206" fill="#3B5C3A" opacity="0.75"/>
-    <text x="50" y="204" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#3B5C3A" font-weight="600" opacity="0.6">Z</text>
-  </g>
-
-  <!-- Est — Argeste (ardoise) -->
-  <g>
-    <line x1="332" y1="200" x2="372" y2="200" stroke="#6B6B6B" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
-    <polygon points="384,200 368,194 368,206" fill="#6B6B6B" opacity="0.75"/>
-    <text x="350" y="204" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#6B6B6B" font-weight="600" opacity="0.6">A</text>
-  </g>
-
-  <!-- Lignes diagonales fines -->
-  <g stroke="#C89F5B" stroke-width="1" opacity="0.2" stroke-linecap="round">
-    <line x1="58" y1="58" x2="82" y2="82"/>
-    <line x1="342" y1="58" x2="318" y2="82"/>
-    <line x1="58" y1="342" x2="82" y2="318"/>
-    <line x1="342" y1="342" x2="318" y2="318"/>
-  </g>
-
-  <!-- Cœur central -->
-  <g filter="url(#glow)">
-    <!-- Cœur principal — Bézier organique, légèrement asymétrique -->
-    <path d="
-      M 200 290
-      C 200 290, 115 225, 115 168
-      C 115 128, 148 108, 175 114
-      C 190 118, 200 135, 200 135
-      C 200 135, 210 118, 225 114
-      C 252 108, 285 128, 285 168
-      C 285 225, 200 290, 200 290
-      Z
-    " fill="url(#heartGrad)" filter="url(#softShadow)"/>
-
-    <!-- Éclat intérieur -->
-    <path d="
-      M 200 270
-      C 200 270, 135 215, 135 173
-      C 135 145, 158 130, 178 135
-      C 190 138, 200 150, 200 150
-      C 200 150, 210 138, 222 135
-      C 242 130, 265 145, 265 173
-      C 265 215, 200 270, 200 270
-      Z
-    " fill="url(#heartInner)"/>
-
-    <!-- Croix au centre du cœur -->
-    <line x1="200" y1="152" x2="200" y2="240" stroke="#FFFBF0" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
-    <line x1="164" y1="188" x2="236" y2="188" stroke="#FFFBF0" stroke-width="2" opacity="0.3" stroke-linecap="round"/>
-
-    <!-- Point lumineux au centre de la croix -->
-    <circle cx="200" cy="188" r="3" fill="#FFFBF0" opacity="0.4"/>
-  </g>
-
-  <!-- Texte circulaire (nom du projet) — optionnel, décommentez si voulu
-  <path id="textCircle" d="M 200,200 m -150,0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" fill="none"/>
-  <text font-family="Cormorant Garamond, Georgia, serif" font-size="11" fill="#C89F5B" opacity="0.4" letter-spacing="6">
-    <textPath href="#textCircle" startOffset="15%">C Œ U R   A S S A I S O N N É</textPath>
-  </text>
-  -->
 </svg>
   </div>
   <h1 class="hero-title" id="v-title"></h1>
