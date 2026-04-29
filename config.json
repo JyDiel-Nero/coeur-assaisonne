@@ -68,7 +68,7 @@
     },
     "newsletter": {
       "url": "#",
-      "title": "Newsletter mensuelle",
+      "title": "Newsletter mensuelle (à venir)",
       "desc": " Un poème, un édito, les nouvelles du projet"
     },
     "commande": {
@@ -78,12 +78,12 @@
     },
     "tiktok": {
       "url": "#",
-      "title": "TikTok · @jydielrecords",
+      "title": "TikTok · @jydielrecords (à venir)",
       "desc": " Poèmes lus à voix haute chaque semaine"
     },
     "instagram": {
       "url": "#",
-      "title": "Instagram · @jydielrecords",
+      "title": "Instagram · @jydielrecords (à venir)",
       "desc": " Carrousels, sentences, communauté"
     }
   },
