@@ -102,7 +102,7 @@
     "cite": "— Cœur assaisonné, J.y.D., 30 novembre 2022"
   },
   "footer": {
-    "text": "Cœur assaisonné · Tétralogie en quatre vents<br>325 poèmes · 2013-2025<br><br>NAM Johnny Yao Daniel-Marie — JyDiel In-Time · jydielintime.com · Tous droits réservés. · © 2013-2025"
+    "text": "Cœur assaisonné · Tétralogie en quatre vents<br>325 poèmes · 2013-2025<br><br>© 2013-2025 · NAM Johnny Yao Daniel-Marie — JyDiel In-Time · jydielintime.com · Tous droits réservés."
   },
   "github": {
     "repo": "JyDiel-Nero/coeur-assaisonne",
@@ -110,9 +110,9 @@
     "configPath": "config.json"
   },
   "banner": {
-    "enabled": true,
     "text": "Entrons dans le temps",
-    "url": "https://jydielintime.com"
+    "url": "https://jydielintime.com",
+    "enabled": true
   },
   "themes": {
     "active": "default",
