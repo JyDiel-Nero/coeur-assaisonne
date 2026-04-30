@@ -1,4 +1,4 @@
-<!-- COEUR-ASSAISONNE-V6-2026-04-20 -->
+<!-- COEUR-ASSAISONNE-V9-2026-04-20 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -52,7 +52,7 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .link-text{flex:1}.link-text .lt{font-family:var(--font-display);font-size:1.1rem;font-weight:600;color:var(--ink);margin-bottom:2px}.link-text .ld{font-size:.78rem;color:var(--gray);line-height:1.3}
 .link-arrow{flex-shrink:0;color:var(--copper);opacity:0;transform:translateX(-8px);transition:all .3s;font-size:1.1rem}
 .link-card:hover .link-arrow{opacity:1;transform:translateX(0)}
-.ic-notos{background:var(--notos-bg);color:var(--notos-accent)}.ic-argeste{background:var(--argeste-bg);color:var(--argeste-accent)}.ic-boree{background:var(--boree-bg);color:var(--boree-ink)}.ic-zephyr{background:var(--zephyr-bg);color:var(--zephyr-accent)}.ic-yeay{background:var(--yeay-bg);color:var(--yeay-accent)}.ic-blog{background:#F0EBE3;color:var(--copper-dark)}.ic-nl{background:#E8F0F8;color:#1F4A66}.ic-cmd{background:#FFF0F0;color:#C0392B}.ic-soc{background:#F5F5F5;color:var(--ink)}
+.ic-notos{background:var(--notos-bg);color:var(--notos-accent)}.ic-argeste{background:var(--argeste-bg);color:var(--argeste-accent)}.ic-boree{background:var(--boree-bg);color:var(--boree-ink)}.ic-zephyr{background:var(--zephyr-bg);color:var(--zephyr-accent)}.ic-yeay{background:var(--yeay-bg);color:var(--yeay-accent)}.ic-blog{background:#F0EBE3;color:var(--copper-dark)}.ic-nl{background:#E8F0F8;color:#1F4A66}.ic-cmd{background:#FFF0F0;color:#C0392B}.ic-intime{background:#F4E4BC;color:#8B4513}.ic-intime svg,.ic-blog svg,.ic-music svg{display:block}.ic-soc{background:#F5F5F5;color:var(--ink)}
 .quote-section{max-width:600px;margin:0 auto;padding:4rem 2rem;text-align:center}
 .quote-section blockquote{font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.6rem);font-style:italic;color:var(--ink-soft);line-height:1.8;margin-bottom:1rem}
 .quote-section cite{font-family:var(--font-body);font-size:.8rem;color:var(--gray);font-style:normal}
@@ -97,10 +97,61 @@ footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
 .cms-status.err{display:block;background:#3a1a1a;color:#E74C3C;border:1px solid #E74C3C}
 .cms-status.info{display:block;background:#1a2a3a;color:#3498DB;border:1px solid #3498DB}
 .cms-gh-info{padding:12px 16px;background:#1a2a1a;border:1px solid #2a4a2a;border-radius:6px;font-size:12px;color:#4CAF50;margin-bottom:12px}
+
+/* ── THEMES ──────────────────────────────────────────── */
+body[data-theme="dark"]{
+  --cream:#12100E;--copper:#C89F5B;--copper-dark:#A07840;--ink:#E8E0D0;
+  --ink-soft:#C8B89A;--gray:#8A8070;--gray-light:#5A5048;--white:#1C1814;
+}
+body[data-theme="sepia"]{
+  --cream:#F4ECD8;--copper:#8B5E3C;--copper-dark:#6B3E1C;--ink:#2C1810;
+  --ink-soft:#5C3820;--gray:#8B7355;--gray-light:#C4A878;--white:#FCF5E8;
+}
+body[data-theme="notos"]{
+  --cream:#F4E4BC;--copper:#B87333;--copper-dark:#8B4513;--ink:#4A2C0A;
+  --ink-soft:#6B3A10;--gray:#8B6845;--gray-light:#C4A878;--white:#FEF6E4;
+}
+body[data-theme="argeste"]{
+  --cream:#D8D5CF;--copper:#6B6B6B;--copper-dark:#3D4454;--ink:#1F2428;
+  --ink-soft:#3A3E48;--gray:#707070;--gray-light:#A0A0A0;--white:#F0EDEA;
+}
+body[data-theme="boree"]{
+  --cream:#0A1628;--copper:#8FB4D8;--copper-dark:#5A84A8;--ink:#DDE8F0;
+  --ink-soft:#AABFCC;--gray:#607890;--gray-light:#2A3A4A;--white:#0F1E30;
+}
+body[data-theme="zephyr"]{
+  --cream:#DFEAD8;--copper:#3B5C3A;--copper-dark:#2A4527;--ink:#1A2E17;
+  --ink-soft:#2E4A2A;--gray:#5A7A55;--gray-light:#8AAA85;--white:#EEF5EC;
+}
+
+/* ── BANNER ──────────────────────────────────────────── */
+.site-banner{display:block;text-align:center;padding:.65rem 1.5rem;background:var(--copper);color:var(--white);font-family:var(--font-display);font-size:.9rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s;position:relative;z-index:100}
+.site-banner:hover{opacity:.88;letter-spacing:.18em}
+.site-banner.hidden{display:none}.site-banner{display:none!important}
+
+/* ── MUSIC SECTION CARD ──────────────────────────────── */
+.ic-music{background:#1a1a2e;color:#C084FC}
+
+/* ── CMS THEME PICKER ───────────────────────────────── */
+.theme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.theme-btn{padding:8px 4px;border:2px solid transparent;border-radius:8px;cursor:pointer;font-size:11px;font-weight:600;text-align:center;transition:all .2s}
+.theme-btn.active{border-color:#C89F5B}
+.theme-btn[data-t="default"]{background:#FEF6E4;color:#1F2428}
+.theme-btn[data-t="dark"]{background:#12100E;color:#E8E0D0}
+.theme-btn[data-t="sepia"]{background:#F4ECD8;color:#2C1810}
+.theme-btn[data-t="notos"]{background:#F4E4BC;color:#4A2C0A}
+.theme-btn[data-t="argeste"]{background:#D8D5CF;color:#1F2428}
+.theme-btn[data-t="boree"]{background:#1F3A5F;color:#DDE8F0}
+.theme-btn[data-t="zephyr"]{background:#DFEAD8;color:#1A2E17}
+
+
+/* SVG icons in link cards */
+.link-icon svg{width:22px;height:22px;stroke:currentColor;display:block}
 </style>
 </head>
 <body>
 
+<a class="site-banner" id="site-banner" href="https://jydielintime.com" target="_blank" rel="noopener">Entrons dans le temps</a>
 <section class="hero">
   <div class="logo-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
@@ -195,7 +246,29 @@ footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
 <div class="cms-panel" id="cms-panel">
   <div class="cms-ph"><h3>⚙ Administration</h3><button class="cms-x" id="cms-close">✕</button></div>
   <div class="cms-s"><h4>🔗 GitHub</h4><div class="cms-gh-info" id="gh-info">Connecté</div><div class="cms-actions"><button class="cms-btn cms-btn-sec" id="gh-logout">🔓 Déconnecter</button></div></div>
-  <div class="cms-s"><h4>Thème & couleurs</h4>
+  
+  <div class="cms-s"><h4>🎨 Thème actif</h4>
+    <div class="theme-grid">
+      <button class="theme-btn active" data-t="default">Défaut</button>
+      <button class="theme-btn" data-t="dark">Nuit</button>
+      <button class="theme-btn" data-t="sepia">Sépia</button>
+      <button class="theme-btn" data-t="notos">Notos</button>
+      <button class="theme-btn" data-t="argeste">Argeste</button>
+      <button class="theme-btn" data-t="boree">Borée</button>
+      <button class="theme-btn" data-t="zephyr">Zéphyr</button>
+    </div>
+  </div>
+  <div class="cms-s"><h4>🏷 Bandeau (désactivé — voir lien « Entrons dans le temps »)</h4>
+    <div class="cms-f"><label>Texte du bandeau</label><input type="text" id="e-banner-text" value="Entrons dans le temps"></div>
+    <div class="cms-f"><label>URL du bandeau</label><input type="url" id="e-banner-url" value="https://jydielintime.com"></div>
+    <div class="cms-f"><label>Afficher le bandeau</label><select id="e-banner-enabled"><option value="true">Oui</option><option value="false">Non</option></select></div>
+  </div>
+  <div class="cms-s"><h4>🎵 Textes en Musique</h4>
+    <div class="cms-f"><label>Titre</label><input type="text" id="l-title-musique" value="Textes en Musique"></div>
+    <div class="cms-f"><label>Description</label><input type="text" id="l-desc-musique" value="Poèmes mis en musique · À venir"></div>
+    <div class="cms-f"><label>URL</label><input type="url" id="l-url-musique" value="#" placeholder="https://..."></div>
+  </div>
+<div class="cms-s"><h4>Thème & couleurs</h4>
     <div class="cms-f"><label>Fond</label><div class="cms-cr"><input type="color" id="c-cream" value="#FEF6E4"><input type="text" id="c-cream-h" value="#FEF6E4"></div></div>
     <div class="cms-f"><label>Accent cuivre</label><div class="cms-cr"><input type="color" id="c-copper" value="#B87333"><input type="text" id="c-copper-h" value="#B87333"></div></div>
     <div class="cms-f"><label>Encre</label><div class="cms-cr"><input type="color" id="c-ink" value="#1F2428"><input type="text" id="c-ink-h" value="#1F2428"></div></div>
@@ -231,17 +304,26 @@ footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
 <script>
 (function(){
 // ===== DEFAULT CONFIG EMBEDDED — site works even without config.json =====
-const DEFAULT_CONFIG = {"site": {"title": "C\u0153ur assaisonn\u00e9", "subtitle": "T\u00e9tralogie po\u00e9tique en quatre vents", "author": "Johnny Y. Nam \u00b7 JyDiel Records", "epigraph": "Que vienne le temps<br>Que changent les saisons<br>Il demeure le m\u00eame<br>Ses ar\u00f4mes diff\u00e8rent"}, "theme": {"colorCream": "#FEF6E4", "colorCopper": "#B87333", "colorInk": "#1F2428", "colorGray": "#707070", "fontDisplay": "'Cormorant Garamond',Georgia,serif", "fontBody": "'Lora',Georgia,serif"}, "seasons": [{"wind": "Notos", "name": "Le d\u00e9sert", "count": 127}, {"wind": "Argeste", "name": "L'apprentissage", "count": 92}, {"wind": "Bor\u00e9e", "name": "L'alliance", "count": 82}, {"wind": "Z\u00e9phyr", "name": "La transmission", "count": 24}], "links": {"notos": {"url": "#", "title": "Notos \u00b7 M\u00e9moires d'un autre \u00e9t\u00e9", "desc": "127 po\u00e8mes \u00b7 Le d\u00e9sert \u00b7 2013-2021"}, "argeste": {"url": "#", "title": "Argeste \u00b7 M\u00e9moire d'un autre automne", "desc": "92 po\u00e8mes \u00b7 L'apprentissage \u00b7 2021-2022"}, "boree": {"url": "#", "title": "Bor\u00e9e \u00b7 M\u00e9moire d'un autre hiver", "desc": "82 po\u00e8mes \u00b7 L'alliance \u00b7 2022-2023"}, "zephyr": {"url": "#", "title": "Z\u00e9phyr \u00b7 M\u00e9moire de tous les printemps", "desc": "24 po\u00e8mes \u00b7 La transmission \u00b7 2023-2025"}, "yeay": {"url": "#", "title": "Yeay \u00b7 Compilation annuelle", "desc": "Po\u00e8mes de gratitude d'anniversaire \u00b7 depuis 2017"}, "blog": {"url": "https://jydielrecords.wixsite.com/entreici-et-ailleurs", "title": "Blog \u00b7 Entre ici et ailleurs", "desc": "10 po\u00e8mes en acc\u00e8s libre"}, "newsletter": {"url": "#", "title": "Newsletter mensuelle", "desc": "Un po\u00e8me, un \u00e9dito, les nouvelles du projet"}, "commande": {"url": "#", "title": "Cartes & po\u00e8mes personnalis\u00e9s", "desc": "Commandez une carte calligraphi\u00e9e, un po\u00e8me sur mesure, une d\u00e9dicace"}, "tiktok": {"url": "#", "title": "TikTok \u00b7 @jydielrecords", "desc": "Po\u00e8mes lus \u00e0 voix haute chaque semaine"}, "instagram": {"url": "#", "title": "Instagram \u00b7 @jydielrecords", "desc": "Carrousels, sentences, communaut\u00e9"}}, "quote": {"text": "Mon c\u0153ur \u00e0 moi qui se teinte<br>De blanc de noir d'ocre de marron<br>Mon c\u0153ur \u00e0 moi o\u00f9 sont ceintes<br>Plumes, nuages, poussi\u00e8re et goudron.", "cite": "\u2014 C\u0153ur assaisonn\u00e9, J.y.D., 30 novembre 2022"}, "footer": {"text": "C\u0153ur assaisonn\u00e9 \u00b7 T\u00e9tralogie en quatre vents<br>325 po\u00e8mes \u00b7 2013-2025<br><br>JyDiel Records \u00b7 \u00a9 2026"}, "github": {"repo": "jydielrecords/coeur-assaisonne", "branch": "main", "configPath": "config.json"}};
+const DEFAULT_CONFIG = {"site": {"title": "C\u0153ur assaisonn\u00e9", "subtitle": "T\u00e9tralogie po\u00e9tique en quatre vents", "author": "Johnny Y. Nam \u00b7 JyDiel Records", "epigraph": "Que vienne le temps<br>Que changent les saisons<br>Il demeure le m\u00eame<br>Ses ar\u00f4mes diff\u00e8rent"}, "theme": {"colorCream": "#fef6e4", "colorCopper": "#b87333", "colorInk": "#1f2428", "colorGray": "#707070", "fontDisplay": "'Cormorant Garamond',Georgia,serif", "fontBody": "'Lora',Georgia,serif"}, "seasons": [{"wind": "Notos", "name": "Le d\u00e9sert", "count": 127}, {"wind": "Argeste", "name": "L'apprentissage", "count": 92}, {"wind": "Bor\u00e9e", "name": "L'alliance", "count": 82}, {"wind": "Z\u00e9phyr", "name": "La transmission", "count": 24}], "links": {"notos": {"url": "#", "title": "Notos \u00b7 M\u00e9moires d'un autre \u00e9t\u00e9 ", "desc": "127 po\u00e8mes \u00b7 Le d\u00e9sert \u00b7 2013-2021"}, "argeste": {"url": "#", "title": "Argeste \u00b7 M\u00e9moire d'un autre automne ", "desc": "92 po\u00e8mes \u00b7 L'apprentissage \u00b7 2021-2022"}, "boree": {"url": "#", "title": "Bor\u00e9e \u00b7 M\u00e9moire d'un autre hiver ", "desc": "82 po\u00e8mes \u00b7 L'alliance \u00b7 2022-2023"}, "zephyr": {"url": "#", "title": "Z\u00e9phyr \u00b7 M\u00e9moire de tous les printemps ", "desc": "24 po\u00e8mes \u00b7 La transmission \u00b7 2023-2025"}, "yeay": {"url": "#", "title": "Yeay \u00b7 Compilation annuelle", "desc": " Po\u00e8mes de gratitude d'anniversaire \u00b7 depuis 2017"}, "intime": {"url": "https://jydielintime.com", "title": "Entrons dans le temps", "desc": "Po\u00e9sie, spiritualit\u00e9, pr\u00e9sence"}, "blog": {"url": "https://jydielintime.com/heures", "title": "Blog \u00b7 Entre ici et ailleurs", "desc": " Des po\u00e8mes en acc\u00e8s libre"}, "newsletter": {"url": "#", "title": "Newsletter mensuelle (\u00e0 venir)", "desc": " Un po\u00e8me, un \u00e9dito, les nouvelles du projet"}, "musique": {"url": "#", "title": "Textes en Musique", "desc": "Po\u00e8mes mis en musique \u00b7 \u00c0 venir"}, "commande": {"url": "mailto:eicietailleurs@gmail.com", "title": "Cartes & po\u00e8mes personnalis\u00e9s", "desc": " Commandez une carte calligraphi\u00e9e, un po\u00e8me sur mesure, une d\u00e9dicace"}, "tiktok": {"url": "#", "title": "TikTok \u00b7 @jydielrecords (\u00e0 venir)", "desc": " Po\u00e8mes lus \u00e0 voix haute chaque semaine"}, "instagram": {"url": "#", "title": "Instagram \u00b7 @jydielrecords (\u00e0 venir)", "desc": " Carrousels, sentences, communaut\u00e9"}}, "quote": {"text": "Mon c\u0153ur \u00e0 moi qui se teinte<br>De blanc de noir d'ocre de marron<br>Mon c\u0153ur \u00e0 moi o\u00f9 sont ceintes<br>Plumes, nuages, poussi\u00e8re et goudron.", "cite": "\u2014 C\u0153ur assaisonn\u00e9, J.y.D., 30 novembre 2022"}, "footer": {"text": "C\u0153ur assaisonn\u00e9 \u00b7 T\u00e9tralogie en quatre vents<br>325 po\u00e8mes \u00b7 2013-2025<br><br>NAM Johnny Yao Daniel-Marie \u2014 JyDiel In-Time \u00b7 jydielintime.com \u00b7 Tous droits r\u00e9serv\u00e9s. \u00b7 \u00a9 2013-2025"}, "github": {"repo": "JyDiel-Nero/coeur-assaisonne", "branch": "main", "configPath": "config.json"}, "banner": {"enabled": true, "text": "Entrons dans le temps", "url": "https://jydielintime.com"}, "themes": {"active": "default", "available": ["default", "dark", "sepia", "notos", "argeste", "boree", "zephyr"]}};
 
-const LINK_ICONS={notos:'☀',argeste:'◇',boree:'❄',zephyr:'❧',yeay:'♫',blog:'✎',newsletter:'✉',commande:'✦',tiktok:'▶',instagram:'◉'};
-const LINK_IC={notos:'ic-notos',argeste:'ic-argeste',boree:'ic-boree',zephyr:'ic-zephyr',yeay:'ic-yeay',blog:'ic-blog',newsletter:'ic-nl',commande:'ic-cmd',tiktok:'ic-soc',instagram:'ic-soc'};
-const GROUPS=[{title:'Les recueils',keys:['notos','argeste','boree','zephyr']},{title:'Yeay · Gratitudes de décembre',keys:['yeay']},{title:'Lire et écouter',keys:['blog','newsletter']},{title:'Commande spéciale',keys:['commande']},{title:'Suivre',keys:['tiktok','instagram']}];
+const LINK_ICONS={intime:`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h14M5 22h14M6 2v4l5 5-5 5v4M18 2v4l-5 5 5 5v4"/></svg>`,musique:`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`,notos:'☀',argeste:'◇',boree:'❄',zephyr:'❧',yeay:'♫',blog:`<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 15.5"/></svg>`,newsletter:'✉',commande:'✦',tiktok:'▶',instagram:'◉'};
+const LINK_IC={intime:'ic-intime',musique:'ic-music',notos:'ic-notos',argeste:'ic-argeste',boree:'ic-boree',zephyr:'ic-zephyr',yeay:'ic-yeay',blog:'ic-blog',newsletter:'ic-nl',commande:'ic-cmd',tiktok:'ic-soc',instagram:'ic-soc'};
+const GROUPS=[{title:'Les recueils',keys:['notos','argeste','boree','zephyr']},{title:'Yeay · Gratitudes de décembre',keys:['yeay']},{title:'Lire et écouter',keys:['intime','blog','newsletter','musique']},{title:'Commande spéciale',keys:['commande']},{title:'Suivre',keys:['tiktok','instagram']}];
 let CFG=null,GH_TOKEN='',GH_REPO='',GH_BRANCH='';
+
+
+function applyTheme(t){
+  document.body.setAttribute('data-theme', t||'default');
+  document.querySelectorAll('.theme-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.t===(t||'default'));
+  });
+}
 
 function render(c){
   CFG=c;const r=document.documentElement.style;
   r.setProperty('--cream',c.theme.colorCream);r.setProperty('--copper',c.theme.colorCopper);r.setProperty('--ink',c.theme.colorInk);r.setProperty('--gray',c.theme.colorGray);
   r.setProperty('--font-display',c.theme.fontDisplay);r.setProperty('--font-body',c.theme.fontBody);document.body.style.background=c.theme.colorCream;
+  if(c.themes)applyTheme(c.themes.active);
   document.getElementById('v-title').textContent=c.site.title;document.getElementById('v-subtitle').textContent=c.site.subtitle;
   document.getElementById('v-author').textContent=c.site.author;document.getElementById('v-epigraph').innerHTML=c.site.epigraph;
   const ss=document.getElementById('v-seasons');ss.innerHTML='';
@@ -250,6 +332,15 @@ function render(c){
   GROUPS.forEach(g=>{ls.innerHTML+=`<h2>${g.title}</h2>`;g.keys.forEach(k=>{const l=c.links[k];if(!l)return;const href=l.url&&l.url!=='#'?l.url:'#';const tg=href!=='#'?' target="_blank" rel="noopener"':'';ls.innerHTML+=`<a href="${href}" class="link-card"${tg}><span class="link-icon ${LINK_IC[k]}">${LINK_ICONS[k]}</span><span class="link-text"><span class="lt">${l.title}</span><span class="ld">${l.desc}</span></span><span class="link-arrow">→</span></a>`;});});
   document.getElementById('v-quote').innerHTML=c.quote.text;document.getElementById('v-cite').textContent=c.quote.cite;document.getElementById('v-footer').innerHTML=c.footer.text;
   document.title=c.site.title+' — '+c.site.author;
+
+  // Banner
+  const bn=document.getElementById('site-banner');
+  if(bn&&c.banner){
+    bn.textContent=c.banner.text||'Entrons dans le temps';
+    bn.href=c.banner.url||'https://jydielintime.com';
+    bn.classList.toggle('hidden',!c.banner.enabled);
+  }
+
 }
 
 function populateCMS(c){
@@ -263,6 +354,13 @@ function populateCMS(c){
   const lf=document.getElementById('cms-links-fields');lf.innerHTML='';
   Object.entries(c.links).forEach(([k,v])=>{lf.innerHTML+=`<div class="cms-f"><label>${k.toUpperCase()} — Titre</label><input type="text" id="l-title-${k}" value="${v.title}"></div><div class="cms-f"><label>${k.toUpperCase()} — Description</label><input type="text" id="l-desc-${k}" value="${v.desc}"></div><div class="cms-f"><label>${k.toUpperCase()} — URL</label><input type="url" id="l-url-${k}" value="${v.url}" placeholder="https://..."></div>`;});
   document.getElementById('e-quote').value=c.quote.text;document.getElementById('e-cite').value=c.quote.cite;document.getElementById('e-footer').value=c.footer.text;
+
+  // Banner
+  const ebt=document.getElementById('e-banner-text'),ebu=document.getElementById('e-banner-url'),ebe=document.getElementById('e-banner-enabled');
+  if(c.banner){if(ebt)ebt.value=c.banner.text||'';if(ebu)ebu.value=c.banner.url||'';if(ebe)ebe.value=c.banner.enabled?'true':'false';}
+  // Theme
+  if(c.themes)applyTheme(c.themes.active);
+
 }
 
 function collectConfig(){
@@ -275,6 +373,14 @@ function collectConfig(){
   c.seasons.forEach((s,i)=>{s.wind=document.getElementById('s-wind-'+i).value;s.name=document.getElementById('s-name-'+i).value;s.count=parseInt(document.getElementById('s-count-'+i).value)||0;});
   Object.keys(c.links).forEach(k=>{const t=document.getElementById('l-title-'+k),d=document.getElementById('l-desc-'+k),u=document.getElementById('l-url-'+k);if(t)c.links[k].title=t.value;if(d)c.links[k].desc=d.value;if(u)c.links[k].url=u.value;});
   c.quote.text=document.getElementById('e-quote').value;c.quote.cite=document.getElementById('e-cite').value;c.footer.text=document.getElementById('e-footer').value;
+  
+  // Banner
+  const bt=document.getElementById('e-banner-text'),bu=document.getElementById('e-banner-url'),be=document.getElementById('e-banner-enabled');
+  if(bt)c.banner={text:bt.value,url:bu?bu.value:'https://jydielintime.com',enabled:be?be.value==='true':true};
+  // Active theme
+  const activeBtn=document.querySelector('.theme-btn.active');
+  if(activeBtn){if(!c.themes)c.themes={};c.themes.active=activeBtn.dataset.t||'default';}
+
   c.github={repo:GH_REPO,branch:GH_BRANCH,configPath:'config.json'};return c;
 }
 

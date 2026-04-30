@@ -61,6 +61,11 @@
       "title": "Yeay · Compilation annuelle",
       "desc": " Poèmes de gratitude d'anniversaire · depuis 2017"
     },
+    "intime": {
+      "url": "https://jydielintime.com",
+      "title": "Entrons dans le temps",
+      "desc": "Poésie, spiritualité, présence"
+    },
     "blog": {
       "url": "https://jydielintime.com/heures",
       "title": "Blog · Entre ici et ailleurs",
@@ -70,6 +75,11 @@
       "url": "#",
       "title": "Newsletter mensuelle (à venir)",
       "desc": " Un poème, un édito, les nouvelles du projet"
+    },
+    "musique": {
+      "url": "#",
+      "title": "Textes en Musique",
+      "desc": "Poèmes mis en musique · À venir"
     },
     "commande": {
       "url": "mailto:eicietailleurs@gmail.com",
@@ -98,5 +108,22 @@
     "repo": "JyDiel-Nero/coeur-assaisonne",
     "branch": "main",
     "configPath": "config.json"
+  },
+  "banner": {
+    "enabled": true,
+    "text": "Entrons dans le temps",
+    "url": "https://jydielintime.com"
+  },
+  "themes": {
+    "active": "default",
+    "available": [
+      "default",
+      "dark",
+      "sepia",
+      "notos",
+      "argeste",
+      "boree",
+      "zephyr"
+    ]
   }
 }
