@@ -39,62 +39,86 @@
     "notos": {
       "url": "#",
       "title": "Notos · Mémoires d'un autre été ",
-      "desc": "127 poèmes · Le désert · 2013-2021"
+      "desc": "127 poèmes · Le désert · 2013-2021",
+      "hidden": false,
+      "group": ""
     },
     "argeste": {
       "url": "#",
       "title": "Argeste · Mémoire d'un autre automne ",
-      "desc": "92 poèmes · L'apprentissage · 2021-2022"
+      "desc": "92 poèmes · L'apprentissage · 2021-2022",
+      "hidden": false,
+      "group": ""
     },
     "boree": {
       "url": "#",
       "title": "Borée · Mémoire d'un autre hiver ",
-      "desc": "82 poèmes · L'alliance · 2022-2023"
+      "desc": "82 poèmes · L'alliance · 2022-2023",
+      "hidden": false,
+      "group": ""
     },
     "zephyr": {
       "url": "#",
       "title": "Zéphyr · Mémoire de tous les printemps ",
-      "desc": "24 poèmes · La transmission · 2023-2025"
+      "desc": "24 poèmes · La transmission · 2023-2025",
+      "hidden": false,
+      "group": ""
     },
     "yeay": {
       "url": "#",
       "title": "Yeay · Compilation annuelle",
-      "desc": " Poèmes de gratitude d'anniversaire · depuis 2017"
+      "desc": " Poèmes de gratitude d'anniversaire · depuis 2017",
+      "hidden": false,
+      "group": ""
     },
     "intime": {
       "url": "https://jydielintime.com",
       "title": "Entrons dans le temps",
-      "desc": " Poésie, réflexions, prière"
+      "desc": "Poésie, spiritualité, présence",
+      "hidden": false,
+      "group": ""
     },
     "blog": {
       "url": "https://jydielintime.com/heures",
-      "title": "Heures · Entre ici et ailleurs",
-      "desc": " Des poèmes en accès libre"
-    },
-    "newsletter": {
-      "url": "#",
-      "title": "Newsletter mensuelle (à venir)",
-      "desc": " Un poème, un édito, les nouvelles du projet"
+      "title": "Blog · Entre ici et ailleurs",
+      "desc": " Des poèmes en accès libre",
+      "hidden": false,
+      "group": ""
     },
     "musique": {
       "url": "#",
       "title": "Textes en Musique",
-      "desc": "Poèmes mis en musique · À venir"
+      "desc": "Poèmes mis en musique · À venir",
+      "hidden": false,
+      "group": ""
+    },
+    "newsletter": {
+      "url": "#",
+      "title": "Newsletter mensuelle (à venir)",
+      "desc": " Un poème, un édito, les nouvelles du projet",
+      "hidden": false,
+      "group": ""
     },
     "commande": {
       "url": "mailto:eicietailleurs@gmail.com",
       "title": "Cartes & poèmes personnalisés",
-      "desc": " Commandez une carte calligraphiée, un poème sur mesure, une dédicace"
+      "desc": " Commandez une carte calligraphiée, un poème sur mesure, une dédicace",
+      "hidden": false,
+      "group": ""
     },
     "tiktok": {
       "url": "#",
       "title": "TikTok · @jydielrecords (à venir)",
-      "desc": " Poèmes lus à voix haute chaque semaine"
+      "desc": " Poèmes lus à voix haute chaque semaine",
+      "hidden": false,
+      "group": ""
     },
     "instagram": {
       "url": "#",
       "title": "Instagram · @jydielrecords (à venir)",
-      "desc": " Carrousels, sentences, communauté"
+      "desc": " Carrousels, sentences, communauté",
+      "hidden": false,
+      "group": ""
     }
   },
   "quote": {
@@ -102,7 +126,7 @@
     "cite": "— Cœur assaisonné, J.y.D., 30 novembre 2022"
   },
   "footer": {
-    "text": "Cœur assaisonné · Tétralogie en quatre vents<br>325 poèmes · 2013-2025<br><br>© 2013-2025 · NAM Johnny Yao Daniel-Marie — JyDiel In-Time · jydielintime.com · Tous droits réservés."
+    "text": "Cœur assaisonné · Tétralogie en quatre vents<br>325 poèmes · 2013-2025<br><br>NAM Johnny Yao Daniel-Marie — JyDiel In-Time · jydielintime.com · Tous droits réservés. · © 2013-2025"
   },
   "github": {
     "repo": "JyDiel-Nero/coeur-assaisonne",
@@ -110,9 +134,9 @@
     "configPath": "config.json"
   },
   "banner": {
+    "enabled": true,
     "text": "Entrons dans le temps",
-    "url": "https://jydielintime.com",
-    "enabled": true
+    "url": "https://jydielintime.com"
   },
   "themes": {
     "active": "default",
@@ -125,5 +149,6 @@
       "boree",
       "zephyr"
     ]
-  }
+  },
+  "custom_links": []
 }
