@@ -1,4 +1,4 @@
-<!-- COEUR-ASSAISONNE-V11-2026-04-20 -->
+<!-- COEUR-ASSAISONNE-V14-2026-04-20 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -16,7 +16,7 @@
 <style>
 :root{--cream:#FEF6E4;--copper:#B87333;--copper-dark:#8B4513;--ink:#1F2428;--ink-soft:#4A2C0A;--gray:#707070;--gray-light:#9CA3AF;--white:#FFFBF0;--notos-bg:#F4E4BC;--notos-accent:#B87333;--notos-ink:#4A2C0A;--argeste-bg:#D8D5CF;--argeste-accent:#6B6B6B;--argeste-ink:#1F2428;--boree-bg:#1F3A5F;--boree-accent:#8FB4D8;--boree-ink:#F5F9FC;--zephyr-bg:#DFEAD8;--zephyr-accent:#3B5C3A;--zephyr-ink:#1A2E17;--yeay-bg:#2D1B3E;--yeay-accent:#C084FC;--yeay-ink:#F3E8FF;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Lora',Georgia,serif}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font-body);color:var(--ink);background:var(--cream);min-height:100vh;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:transparent;min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 a{color:inherit;text-decoration:none;transition:all .3s ease}
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;position:relative;overflow:hidden}
@@ -72,7 +72,7 @@ footer p{font-size:.75rem;color:var(--gray-light);line-height:1.6}
 .cms-gate-btn.primary{background:#C89F5B;color:#1a1a1a;flex:1}.cms-gate-btn.primary:hover{background:#B87333}
 .cms-gate-btn.cancel{background:#333;color:#999}.cms-gate-btn.cancel:hover{background:#444;color:#ccc}
 .cms-gate-err{font-size:12px;color:#E74C3C;margin-top:8px;display:none}.cms-gate-err.show{display:block}
-.cms-toggle{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--copper);color:var(--white);border:none;font-size:1.3rem;cursor:pointer;z-index:10000;display:none;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:transform .3s;align-items:center;justify-content:center}
+.cms-toggle{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--copper);color:var(--white);border:none;font-size:1.3rem;cursor:pointer;z-index:10002;display:none;box-shadow:0 4px 16px rgba(0,0,0,.3);transition:transform .3s;align-items:center;justify-content:center}
 .cms-toggle:hover{transform:scale(1.1)}.cms-toggle.vis{display:flex}
 .cms-panel{position:fixed;top:0;right:-500px;width:500px;max-width:90vw;height:100vh;background:#1a1a1a;color:#e0e0e0;z-index:10001;transition:right .4s cubic-bezier(.25,.46,.45,.94);overflow-y:auto;box-shadow:-8px 0 40px rgba(0,0,0,.5);font-family:system-ui,sans-serif;font-size:14px}
 .cms-panel.open{right:0}
@@ -156,19 +156,17 @@ html {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-body {
-  background: transparent !important;
-  position: relative;
-}
+body { position: relative; }
 /* Tinted overlay per theme — allows photo to bleed through */
 body::after {
   content: '';
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   transition: background .6s ease;
 }
+body::after { background: rgba(254,246,228,.82); } /* fallback */
 body[data-theme="default"]::after  { background: rgba(254,246,228,.82); }
 body[data-theme="dark"]::after     { background: rgba(18,16,14,.88);    }
 body[data-theme="sepia"]::after    { background: rgba(244,236,216,.84); }
@@ -177,16 +175,21 @@ body[data-theme="argeste"]::after  { background: rgba(216,213,207,.83); }
 body[data-theme="boree"]::after    { background: rgba(10,22,40,.88);    }
 body[data-theme="zephyr"]::after   { background: rgba(223,234,216,.82); }
 
-/* All content must sit above the overlay */
-section, footer, .site-banner,
-.cms-gate, .cms-toggle, .cms-panel, .cms-overlay {
+/* All content must sit above the overlay — no stacking context on sections */
+.hero, .seasons-strip, .links-section, .quote-section, footer, .site-banner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  isolation: isolate;
 }
+/* CMS elements always on top */
+.cms-gate   { z-index: 20000 !important; }
+.cms-overlay{ z-index: 10000 !important; }
+.cms-panel  { z-index: 10001 !important; }
+.cms-toggle { z-index: 10002 !important; }
 
 </style>
 </head>
-<body>
+<body data-theme="default">
 
 <a class="site-banner" id="site-banner" href="https://jydielintime.com" target="_blank" rel="noopener">Entrons dans le temps</a>
 <section class="hero">
@@ -378,16 +381,20 @@ function removeCustomLink(i){
 }
 
 function applyTheme(t){
-  document.body.setAttribute('data-theme', t||'default');
-  document.querySelectorAll('.theme-btn').forEach(b=>{
-    b.classList.toggle('active', b.dataset.t===(t||'default'));
-  });
+  var theme = t || 'default';
+  document.body.setAttribute('data-theme', theme);
+  var btns = document.querySelectorAll('.theme-btn');
+  for(var i=0;i<btns.length;i++){
+    btns[i].classList.toggle('active', btns[i].getAttribute('data-t') === theme);
+  }
+  if(CFG){ if(!CFG.themes) CFG.themes={}; CFG.themes.active = theme; }
 }
+
 
 function render(c){
   CFG=c;const r=document.documentElement.style;
   r.setProperty('--cream',c.theme.colorCream);r.setProperty('--copper',c.theme.colorCopper);r.setProperty('--ink',c.theme.colorInk);r.setProperty('--gray',c.theme.colorGray);
-  r.setProperty('--font-display',c.theme.fontDisplay);r.setProperty('--font-body',c.theme.fontBody);document.body.style.background=c.theme.colorCream;
+  r.setProperty('--font-display',c.theme.fontDisplay);r.setProperty('--font-body',c.theme.fontBody);
   if(c.themes)applyTheme(c.themes.active);
   document.getElementById('v-title').textContent=c.site.title;document.getElementById('v-subtitle').textContent=c.site.subtitle;
   document.getElementById('v-author').textContent=c.site.author;document.getElementById('v-epigraph').innerHTML=c.site.epigraph;
