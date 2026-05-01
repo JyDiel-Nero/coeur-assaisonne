@@ -100,7 +100,7 @@
       "group": ""
     },
     "commande": {
-      "url": "mailto:eicietailleurs@gmail.com",
+      "url": "mailto:contact@jydielintime.com",
       "title": "Cartes & poèmes personnalisés",
       "desc": " Commandez une carte calligraphiée, un poème sur mesure, une dédicace",
       "hidden": false,
@@ -134,9 +134,9 @@
     "configPath": "config.json"
   },
   "banner": {
-    "enabled": true,
     "text": "Entrons dans le temps",
-    "url": "https://jydielintime.com"
+    "url": "https://jydielintime.com",
+    "enabled": true
   },
   "themes": {
     "active": "default",
