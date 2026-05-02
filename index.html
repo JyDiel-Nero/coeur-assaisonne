@@ -1,4 +1,4 @@
-<!-- COEUR-ASSAISONNE-V17-2026-04-20 -->
+<!-- COEUR-ASSAISONNE-V18-2026-04-20 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -301,8 +301,13 @@ footer {
 /* Prevent any ghost space after footer */
 footer + * { display: none !important; }
 /* CMS elements are outside normal flow — keep them */
-.cms-gate, .cms-toggle, .cms-overlay, .cms-panel { display: unset; }
-.cms-toggle.vis { display: flex !important; }
+/* CMS elements — fixed position, excluded from footer+ suppression */
+.cms-gate    { display: none; }   /* shown only via JS .active class */
+.cms-overlay { display: none; }   /* shown only via JS .open class */
+.cms-panel   { display: block; }  /* always in DOM, slides via right: -500px */
+.cms-toggle  { display: none; }   /* hidden until authenticated */
+.cms-toggle.vis { display: flex !important; } /* shown only after GitHub auth */
+.cms-gate.active { display: flex !important; }
 
 </style>
 </head>
