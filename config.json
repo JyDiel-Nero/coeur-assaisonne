@@ -74,7 +74,7 @@
     "intime": {
       "url": "https://jydielintime.com",
       "title": "Entrons dans le temps",
-      "desc": "Poésie, spiritualité, présence",
+      "desc": " Poésie, spiritualité, présence",
       "hidden": false,
       "group": ""
     },
@@ -88,7 +88,7 @@
     "musique": {
       "url": "#",
       "title": "Textes en Musique",
-      "desc": "Poèmes mis en musique · À venir",
+      "desc": " Poèmes mis en musique · À venir",
       "hidden": false,
       "group": ""
     },
@@ -108,14 +108,14 @@
     },
     "tiktok": {
       "url": "#",
-      "title": "TikTok · @jydielrecords (à venir)",
+      "title": "TikTok · @jrds (à venir)",
       "desc": " Poèmes lus à voix haute chaque semaine",
       "hidden": false,
       "group": ""
     },
     "instagram": {
       "url": "#",
-      "title": "Instagram · @jydielrecords (à venir)",
+      "title": "Instagram · @jrds (à venir)",
       "desc": " Carrousels, sentences, communauté",
       "hidden": false,
       "group": ""
@@ -139,7 +139,7 @@
     "enabled": true
   },
   "themes": {
-    "active": "default",
+    "active": "boree",
     "available": [
       "default",
       "dark",
