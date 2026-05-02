@@ -1,4 +1,4 @@
-<!-- COEUR-ASSAISONNE-V18-2026-04-20 -->
+<!-- COEUR-ASSAISONNE-V19-2026-04-20 -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -41,7 +41,16 @@ a{color:inherit;text-decoration:none;transition:all .3s ease}
 .season-card .s-wind{font-family:var(--font-display);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;letter-spacing:.05em;margin-bottom:.3rem}
 .season-card .s-name{font-family:var(--font-body);font-size:.8rem;font-style:italic;opacity:.8;margin-bottom:1rem}
 .season-card .s-count{font-family:var(--font-display);font-size:2.8rem;font-weight:700;opacity:.2;position:absolute;bottom:1rem;right:1.2rem}
-.sc-0{background:var(--notos-bg);color:var(--notos-ink)}.sc-1{background:var(--argeste-bg);color:var(--argeste-ink)}.sc-2{background:var(--boree-bg);color:var(--boree-ink)}.sc-3{background:var(--zephyr-bg);color:var(--zephyr-ink)}
+/* Season cards — fixed palette, immune to global theme */
+.sc-0{background:#F4E4BC !important;color:#4A2C0A !important}  /* Notos  — ocre  */
+.sc-1{background:#D8D5CF !important;color:#1F2428 !important}  /* Argeste — pierre */
+.sc-2{background:#1F3A5F !important;color:#F5F9FC !important}  /* Borée  — nuit  */
+.sc-3{background:#DFEAD8 !important;color:#1A2E17 !important}  /* Zéphyr — forêt */
+/* Sub-elements inherit card color */
+.sc-0 .s-wind,.sc-0 .s-name,.sc-0 .s-label,.sc-0 .s-count{color:#4A2C0A !important}
+.sc-1 .s-wind,.sc-1 .s-name,.sc-1 .s-label,.sc-1 .s-count{color:#1F2428 !important}
+.sc-2 .s-wind,.sc-2 .s-name,.sc-2 .s-label,.sc-2 .s-count{color:#F5F9FC !important}
+.sc-3 .s-wind,.sc-3 .s-name,.sc-3 .s-label,.sc-3 .s-count{color:#1A2E17 !important}
 .links-section{max-width:540px;margin:0 auto;padding:3rem 1.5rem 4rem}
 .links-section h2{font-family:var(--font-display);font-size:.8rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gray);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:1px solid rgba(184,115,51,.25)}
 .link-card{display:flex;align-items:center;gap:1rem;padding:1rem 1.4rem;margin-bottom:.75rem;background:var(--white);border:1px solid rgba(184,115,51,.15);border-radius:12px;transition:all .3s cubic-bezier(.25,.46,.45,.94);cursor:pointer;position:relative;overflow:hidden}
