@@ -139,7 +139,7 @@
     "enabled": true
   },
   "themes": {
-    "active": "boree",
+    "active": "dark",
     "available": [
       "default",
       "dark",
